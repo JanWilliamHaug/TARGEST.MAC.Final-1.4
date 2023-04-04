@@ -7,4 +7,7 @@
 
 TARGEST takes a set of requirement documents and generates reports
 
+![TARGEST chart](https://user-images.githubusercontent.com/71844869/229740267-77a8416a-e984-4516-be12-a42be5d3edad.png)
+
+
 
