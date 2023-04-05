@@ -638,6 +638,8 @@ def generateReport2():
                                         TBDReport.add_paragraph(parentTag1)
                                         TBDReport.save('TBDReport.docx')
                                         TBDTags.append(parentTag1)
+                                        print("TBD tag found")
+                                        print(parentTag1)
                                     report3.add_paragraph(parentTag1)
                                     tag.strip()
                                     duplicates.append(str(tag))
@@ -797,6 +799,7 @@ def generateReport2():
                                                             TBDReport.add_paragraph(item)
                                                             TBDReport.save('TBDReport.docx')
                                                             TBDTags.append(x)
+                                                            print("TBDTags", x)
                                     cell = str('A'+ str(counter1))
                                     cell2 = str(str(x))
                                     excelReport2.range(cell).value = cell2
@@ -1455,6 +1458,7 @@ def createExcel():
         excelReport.range("E1").font.Size = 14
         excelReport.range("E1").font.ColorIndex = 2
         excelReport.range("E1:E1").color = (255, 0, 0)
+
         # Adding parentTag header
         excelReport.range("F1").value = 'Parent Tag'
         excelReport.range("F1").font.Size = 14 # Change font size
@@ -1466,7 +1470,8 @@ def createExcel():
         excelReport.range("H1").font.Size = 14 # Change font size
         excelReport.range("H1").font.ColorIndex = 2 # Change font color
         excelReport.range('H1:H1').color = (255, 128, 0) # Change cell background color
-        # Adding OrphanTags header
+
+        # Adding ChildlessTags header
         excelReport.range("J1").value = 'Childless Tags'
         excelReport.range("J1").font.Size = 14 # Change font size
         excelReport.range("J1").font.ColorIndex = 2 # Change font color
@@ -1529,6 +1534,12 @@ def createExcel2():
 
         # For Childless Tags
         df4 = pd.DataFrame(childless)
+
+        # For TBV Tags
+        df5 = pd.DataFrame(TBVTags)
+
+        # For TBD Tags
+        df6 = pd.DataFrame(TBDTags)
         
         
 
@@ -1539,26 +1550,47 @@ def createExcel2():
         #data_range.options(index=False).value
 
         # Listing out the Orphan Tags
-        excelReport2.range("H3").value = df3
+        excelReport2.range("H1").value = df3
         df3 = df3.reset_index(drop=True)
 
         # Listing out the Childless Tags
-        excelReport2.range("K3").value = df4
+        excelReport2.range("K1").value = df4
         df4 = df4.reset_index(drop=True)
+
+        # Listing out the TBV Tags
+        excelReport2.range("N1").value = df5
+        df5 = df5.reset_index(drop=True)
+
+        # Listing out the TBD Tags
+        excelReport2.range("Q1").value = df6
+        df6 = df6.reset_index(drop=True)
         
 
         
         # Adding OrphanTags header
-        excelReport2.range("I3").value = 'Orphan Tags'
-        excelReport2.range("I3").font.Size = 14 # Change font size
-        excelReport2.range("I3").font.ColorIndex = 2 # Change font color
-        excelReport2.range('I3:I3').color = (255, 128, 0) # Change cell background color
+        excelReport2.range("I1").value = 'Orphan Tags'
+        excelReport2.range("I1").font.Size = 14 # Change font size
+        excelReport2.range("I1").font.ColorIndex = 2 # Change font color
+        excelReport2.range('I1:I1').color = (255, 128, 0) # Change cell background color
 
-        # Adding OrphanTags header
-        excelReport2.range("L3").value = 'Childless Tags'
-        excelReport2.range("L3").font.Size = 14 # Change font size
-        excelReport2.range("L3").font.ColorIndex = 2 # Change font color
-        excelReport2.range('L3:L3').color = (150, 75, 0) # Change cell background color
+        # Adding ChildlessTags header
+        excelReport2.range("L1").value = 'Childless Tags'
+        excelReport2.range("L1").font.Size = 14 # Change font size
+        excelReport2.range("L1").font.ColorIndex = 2 # Change font color
+        excelReport2.range('L1:L1').color = (150, 75, 0) # Change cell background color
+
+        # Adding TBVTags header
+        excelReport2.range("O1").value = 'TBV Tags'
+        excelReport2.range("O1").font.Size = 14 # Change font size
+        excelReport2.range("O1").font.ColorIndex = 2 # Change font color
+        excelReport2.range('O1:O1').color = (150, 75, 0) # Change cell background color
+
+        # Adding TBDTags header
+        excelReport2.range("R1").value = 'TBD Tags'
+        excelReport2.range("R1").font.Size = 14 # Change font size
+        excelReport2.range("R1").font.ColorIndex = 2 # Change font color
+        excelReport2.range('R1:R1').color = (150, 75, 0) # Change cell background color
+        
 
         
         
