@@ -105,7 +105,7 @@ wb3 = xw.Book()
 global excelReport3
 excelReport3 = wb3.sheets[0]
 excelReport3.name = "ReportNew"
-# wb3.save('excelNew.xlsx') # Saving excel report as 'AllTags.xlsx'
+wb3.save('excelNew.xlsx') # Saving excel report as 'AllTags.xlsx'
 
 global dicts2Copy # This will hold the dicts2 content in all documents
 dicts2Copy = {}
