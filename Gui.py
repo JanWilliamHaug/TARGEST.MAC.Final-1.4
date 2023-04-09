@@ -44,7 +44,6 @@ def GUI1():
         window.geometry("1000x750")
         window['background'] = '#afeae6'
 
-        #icon = tk.PhotoImage(file='itachiakatttt.png')
         icon = PhotoImage(file='TARGEST.png')
         window.iconphoto(True, icon)
 

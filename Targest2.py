@@ -95,17 +95,24 @@ global paragraph6
 paragraph6 = TBDReport.add_paragraph()
 TBDReport.save('TBDReport.docx')
 
-#wb2 = xw.Book()
-#global excelReport2
-#excelReport2 = wb2.sheets[0]
-#excelReport2.name = "Report"
-#wb2.save('AllTags.xlsx')
+# wb = xw.Book()
+# global excelReport
+# excelReport = wb.sheets[0]
+# excelReport.name = "Report"
+# wb.save('Tags&Requirements.xlsx')
 
-wb3 = xw.Book()
-global excelReport3
-excelReport3 = wb3.sheets[0]
-excelReport3.name = "ReportNew"
-wb3.save('excelNew.xlsx') # Saving excel report as 'AllTags.xlsx'
+
+# wb2 = xw.Book()
+# global excelReport2
+# excelReport2 = wb2.sheets[0]
+# excelReport2.name = "Report"
+# wb2.save('AllTags.xlsx')
+
+# wb3 = xw.Book()
+# global excelReport3
+# excelReport3 = wb3.sheets[0]
+# excelReport3.name = "ReportNew"
+# wb3.save('excelNew.xlsx') # Saving excel report as 'excelNew.xlsx'
 
 global dicts2Copy # This will hold the dicts2 content in all documents
 dicts2Copy = {}
@@ -1387,22 +1394,10 @@ def getTBD():
 
 # Creates an excel report
 def createExcel():
-    try:
-        # book_arr = xw.App().books.add()
-        # wb = book_arr.add()
-        # wb.title = "Report"
         
         wb = xw.Book()
         excelReport = wb.sheets[0]
         excelReport.name = "Report"
-        # excelReport = wb.sheets.add("Report")
-
-        #excelReport.name = report
-        # excelReport.range("B1").value = "Report"
-        # excelReport.range("B1").font.Size = 18 # Change font size
-        # excelReport.range("B1").font.ColorIndex = 2 # Change font color
-        # excelReport.range('A1:S1').color = (0, 0, 255) # Change cell background color
-
 
         # creating a Dataframe object from a list
         # of tuples of key, value pair
@@ -1500,17 +1495,9 @@ def createExcel():
         
         excelReport.autofit()
 
-
         for key in dicts2:
             wb.sheets[0].append([key, dicts2[key]])
-
         wb.save('Tags&Requirements.xlsx') # Saving excel report as 'Tags&Requirements.xlsx'
-    except Exception as e:
-        # Log an error message
-        logging.error('createExcel(): ERROR', exc_info=True)
-    else:
-        # Log a success message
-        logging.info('createExcel(): PASS')
 
 """
 # Creates an excel report
@@ -1767,6 +1754,11 @@ def remove_empty_values(d):
 
 
 def createExcel3():
+    
+    global wb3
+    wb3 = xw.Book()
+    excelReport3 = wb3.sheets[0]
+    excelReport3.name = "ReportNew"
 
     # Adding First Generation Tags header
     excelReport3.range("A1").value = 'First Generation'
