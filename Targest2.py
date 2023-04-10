@@ -95,25 +95,6 @@ global paragraph6
 paragraph6 = TBDReport.add_paragraph()
 TBDReport.save('TBDReport.docx')
 
-# wb = xw.Book()
-# global excelReport
-# excelReport = wb.sheets[0]
-# excelReport.name = "Report"
-# wb.save('Tags&Requirements.xlsx')
-
-
-# wb2 = xw.Book()
-# global excelReport2
-# excelReport2 = wb2.sheets[0]
-# excelReport2.name = "Report"
-# wb2.save('AllTags.xlsx')
-
-# wb3 = xw.Book()
-# global excelReport3
-# excelReport3 = wb3.sheets[0]
-# excelReport3.name = "ReportNew"
-# wb3.save('excelNew.xlsx') # Saving excel report as 'excelNew.xlsx'
-
 global dicts2Copy # This will hold the dicts2 content in all documents
 dicts2Copy = {}
 
@@ -2087,7 +2068,6 @@ def guiTree():
                                             
 
     family_trees.append(current_tree)
-    wb3.save('excelNew.xlsx') # Saving excel report as 'AllTags.xlsx'
     return family_trees
 
             
