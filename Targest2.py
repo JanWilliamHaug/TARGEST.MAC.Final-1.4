@@ -987,9 +987,12 @@ def generateReport2():
         toggle_state3() # this will re-enable excel report button
         #toggle_state5() # This will enable the generate orphan report button
         toggle_state7() #This will enable the getChildless document button
-        orphanGenReport()
         toggle_state9() # This will enable the get TBV button
         toggle_state10() # This will enable the get TBD button
+        toggle_state8() # This will enable the getExcel2 report button
+        toggle_state13() # This will enable the guiTree View button
+        orphanGenReport()
+ 
 
         
     except Exception as e:
@@ -1013,6 +1016,7 @@ def generateReport2():
 def orphanGenReport():
     duplicates = []
     try:
+        """
         # declaring counters
         m = 0
         k = 0
@@ -1194,7 +1198,7 @@ def orphanGenReport():
 
         #orphanss.sort() # sorts the list of orphan tags
         #orphanChildren2Copy.sort() # sorts the list of orphan child tags
-        
+        """
         
         #for orph in orphanss:
         #    orphanReport.add_paragraph(orph)
@@ -1203,10 +1207,7 @@ def orphanGenReport():
             orphanReport.add_paragraph(orph5)
 
         orphanReport.save('orphanReport.docx')
-        toggle_state() #This will enable the getDoc button
         toggle_state4() # This will enable the open orphan report button
-        toggle_state8() # This will enable the getExcel2 report button
-        toggle_state13() # This will enable the guiTree View button
         return dicts2Copy
 
     except Exception as e:
