@@ -39,20 +39,21 @@ def GUI1():
    
     try:
         # Creates the gui
-        window = Tk(className=' TARGEST v.1.17.1 ')
+        window = Tk(className=' TARGEST v.1.18.1 ')
         # set window size #
         window.geometry("1000x750")
+        window['background']='#009ce8'
 
-        canvas = Canvas(window, width=1000, height=750)
-        canvas.pack()
+        #canvas = Canvas(window, width=1000, height=750)
+        #canvas.pack()
 
         # Create a horizontal gradient
-        for i in range(1000):
-            r = int(i/1000 * 152)
-            g = 75  # fixed green value
-            b = 255 - int(i/1000 * 108)
-            color = '#{:02x}{:02x}{:02x}'.format(r, g, b)
-            canvas.create_rectangle(i, 0, i+1, 1000, fill=color, outline='')
+        #for i in range(1000):
+        #    r = int(i/1000 * 152)
+        #    g = 75  # fixed green value
+        #    b = 255 - int(i/1000 * 108)
+        #    color = '#{:02x}{:02x}{:02x}'.format(r, g, b)
+        #    canvas.create_rectangle(i, 0, i+1, 1000, fill=color, outline='')
 
         icon = PhotoImage(file='TARGEST.png')
         window.iconphoto(True, icon)
