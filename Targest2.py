@@ -1737,7 +1737,7 @@ def remove_empty_values(d):
 
 
 
-def createExcel3():
+def createExcel2():
     
     global wb3
     wb3 = xw.Book()
