@@ -28,7 +28,7 @@ This Python-based requirements tracing tool aims to streamline the process of pa
 
 ## Usage
 
-Windows: python main.py
+Windows: python main.py<br>
 macOS: python3 main.py
 
 ## Chart
