@@ -4,8 +4,6 @@
 </p>
 
 
-
-
 # Requirements Tracing Tool
 
 This Python-based requirements tracing tool aims to streamline the process of parsing Word documents, reconciling tags and requirements, and generating various reports for validating the accuracy of the documents and sufficiency of test coverage.
@@ -23,10 +21,10 @@ This Python-based requirements tracing tool aims to streamline the process of pa
 
 1. Clone the repository:
 
-git clone [https://github.com/yourusername/requirements-tracing-tool.git](https://github.com/JanWilliamHaug/TARGEST.Windows.Final-1.4.git)
+   git clone [https://github.com/JanWilliamHaug/TARGEST.Windows.Final-1.4.git](https://github.com/JanWilliamHaug/TARGEST.Windows.Final-1.4.git)
 
-2. Install the required libraries:
-pip install -r requirements.txt
+2. Install the required libraries:<br>
+   pip install -r requirements.txt
 
 ## Usage
 
