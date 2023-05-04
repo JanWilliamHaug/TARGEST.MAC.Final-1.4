@@ -746,10 +746,18 @@ def generateReport2():
                                                         
                                                         if "TBD:" in item:
                                                             TBDReport.add_paragraph(item)
+                                                            TBDTags.append(item)
+                                                            if str(item) in dicts2Copy:
+                                                                para2 = TBDReport.add_paragraph(dicts2Copy[str(item)])
+                                                                para2.paragraph_format.left_indent = Inches(0.25) # adds indentation of text
                                                             TBDReport.save('TBDReport.docx')
 
                                                         if "TBV:" in item:
                                                             TBVReport.add_paragraph(item)
+                                                            TBVTags.append(item)
+                                                            if str(item) in dicts2Copy:
+                                                                para2 = TBVReport.add_paragraph(dicts2Copy[str(item)])
+                                                                para2.paragraph_format.left_indent = Inches(0.25) # adds indentation of text
                                                             TBVReport.save('TBVReport.docx')
 
                                                         counter2 = counter1 - 1
@@ -867,8 +875,9 @@ def generateReport2():
                                                     para.paragraph_format.left_indent = Inches(0.25) # adds indentation of text
                                                     if "TBD:" in x:
                                                             TBDReport.add_paragraph(item, style='List Bullet')
-                                                            para = TBDReport.add_paragraph(dicts2Copy[str(item)])
-                                                            para.paragraph_format.left_indent = Inches(0.25) # adds indentation of text
+                                                            if str(item) in dicts2Copy:
+                                                                para = TBDReport.add_paragraph(dicts2Copy[str(item)])
+                                                                para.paragraph_format.left_indent = Inches(0.25) # adds indentation of text
                                                             TBDReport.save('TBDReport.docx')
                                                     if "TBV:" in x:
                                                             TBVReport.add_paragraph(item, style='List Bullet')
@@ -909,10 +918,18 @@ def generateReport2():
                                                     
                                                     if "TBD:" in item:
                                                             TBDReport.add_paragraph(item)
+                                                            TBDTags.append(item)
+                                                            if str(item) in dicts2Copy:
+                                                                para2 = TBDReport.add_paragraph(dicts2Copy[str(item)])
+                                                                para2.paragraph_format.left_indent = Inches(0.25) # adds indentation of text
                                                             TBDReport.save('TBDReport.docx')
 
                                                     if "TBV:" in item:
                                                             TBVReport.add_paragraph(item)
+                                                            TBVTags.append(item)
+                                                            if str(item) in dicts2Copy:
+                                                                para2 = TBVReport.add_paragraph(dicts2Copy[str(item)])
+                                                                para2.paragraph_format.left_indent = Inches(0.25) # adds indentation of text
                                                             TBVReport.save('TBVReport.docx')
 
                                                     counter2 = counter1 - 1
