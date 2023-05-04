@@ -21,7 +21,7 @@ This Python-based requirements tracing tool streamlines the process of parsing W
 
 1. Clone the repository:
 
-   git clone [https://github.com/JanWilliamHaug/TARGEST.Windows.Final-1.4.git](https://github.com/JanWilliamHaug/TARGEST.Windows.Final-1.4.git)
+   git clone [https://github.com/JanWilliamHaug/TARGEST.MAC.Final-1.4.git](https://github.com/JanWilliamHaug/TARGEST.MAC.Final-1.4.git)
 
 2. Install the required libraries:<br>
    pip install -r requirements.txt
