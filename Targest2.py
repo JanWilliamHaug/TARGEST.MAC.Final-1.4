@@ -703,7 +703,9 @@ def generateReport2():
                                                             para3 = report3.add_paragraph(dicts2Copy[str(item)])
                                                             para3.paragraph_format.left_indent = Inches(0.25) # adds indentation of text
                                                             TBDReport.save('TBDReport.docx')
-
+                                                        
+                                                        
+                                                    
                                                         if "TBV:" in parentTag1:
                                                             TBVReport.add_paragraph(item, style='List Bullet')
                                                             if str(item) in dicts2Copy:
@@ -714,6 +716,9 @@ def generateReport2():
                                                             stringKey = str(item)
                                                             stringKey2 = (stringKey.replace(' ', ''))
                                                             duplicates2 = []
+
+                                                        
+
                                                             if str(stringKey2) in dicts10: # if the key is in the dictionary
                                                                 #for key in dicts10:
                                                                     if item in dicts10:
@@ -739,7 +744,14 @@ def generateReport2():
                                                                     TBVReport.save('TBVReport.docx')
                                                         
                                                         
-                                                        
+                                                        if "TBD:" in item:
+                                                            TBDReport.add_paragraph(item)
+                                                            TBDReport.save('TBDReport.docx')
+
+                                                        if "TBV:" in item:
+                                                            TBVReport.add_paragraph(item)
+                                                            TBVReport.save('TBVReport.docx')
+
                                                         counter2 = counter1 - 1
                                                         cell = str('B'+ str(counter2))
                                                         cell2 = str(item)
@@ -791,7 +803,7 @@ def generateReport2():
                                                             TBVReport.save('TBVReport.docx')
                                                             TBVTags.append(x)
                                     if "TBD:" in x:
-                                                            TBDReport.add_paragraph(item)
+                                                            TBDReport.add_paragraph(x)
                                                             TBDReport.save('TBDReport.docx')
                                                             TBDTags.append(x)
                                                             
@@ -806,6 +818,7 @@ def generateReport2():
                                     if keyCheck4 in dicts2Copy:  # Checks if text of parent tag is found
                                         if dicts2Copy[str(keyCheck4)] != "" and dicts2Copy[str(keyCheck4)] != " ":
                                             report3.add_paragraph(dicts2Copy[str(keyCheck4)])
+
                                             if "TBD:" in keyCheck4:
                                                             TBDReport.add_paragraph(dicts2Copy[str(keyCheck4)])
                                                             TBDReport.save('TBDReport.docx')
@@ -867,6 +880,9 @@ def generateReport2():
                                                             stringKey = str(item)
                                                             stringKey2 = (stringKey.replace(' ', ''))
                                                             duplicates2 = []
+                                                        
+                                                    
+                                                            
                                                             if str(stringKey2) in dicts10: # if the key is in the dictionary
                                                                 #for key in dicts10:
                                                                     if item in dicts10:
@@ -891,7 +907,14 @@ def generateReport2():
                                                                 
                                                                     TBVReport.save('TBVReport.docx')
                                                     
-                                                    
+                                                    if "TBD:" in item:
+                                                            TBDReport.add_paragraph(item)
+                                                            TBDReport.save('TBDReport.docx')
+
+                                                    if "TBV:" in item:
+                                                            TBVReport.add_paragraph(item)
+                                                            TBVReport.save('TBVReport.docx')
+
                                                     counter2 = counter1 - 1
                                                     cell = str('B'+ str(counter2))
                                                     cell2 = str(item)
@@ -928,6 +951,8 @@ def generateReport2():
                            # if "TBV:" in parentTag1:
                             #    TBVReport.add_paragraph(item, style='List Bullet')
                             
+
+
                             TBVReport.save('TBVReport.docx')
                             #print(parents2Copy[i])
                             #print(orphanTagText[o])
@@ -959,7 +984,12 @@ def generateReport2():
                 # save the modified document
            #     report3.save('AllChildandParentTags.docx')
 
-        
+        #if parents2Copy:
+        #    for tg in parents2Copy:
+        #        if "TBV:" in tg:
+        #            TBVReport.add_paragraph(tg)
+        #            TBVReport.save('TBVReport.docx')
+
         #wb2.save('AllTags.xlsx')
         msg1 = ("\nYou can now open up your Word and Excel reports\n")
         Gui.Txt.insert(tk.END, msg1) #print in GUI
@@ -1205,8 +1235,11 @@ def orphanGenReport():
         #for orph in orphanss:
         #    orphanReport.add_paragraph(orph)
         #orphanReport.add_paragraph("Orphan Tags2: ")
+
+
         for orph5 in orphanChildren2Copy:
             orphanReport.add_paragraph(orph5)
+            print(orph5)
 
         orphanReport.save('orphanReport.docx')
         toggle_state4() # This will enable the open orphan report button
