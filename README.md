@@ -4,6 +4,7 @@
 </p>
 
 # Requirements Tracing Tool :mag_right:
+![GitHub repo size](https://img.shields.io/github/repo-size/JanWilliamHaug/TARGEST.MAC.Final-1.4?style=flat-square)
 
 This Python-based requirements tracing tool streamlines the process of parsing Word documents, reconciling tags and requirements, and generating various reports for validating the accuracy of the documents and sufficiency of test coverage. Developed in collaboration with Tandem Diabetes Care, this tool aims to save companies countless hours in managing and analyzing critical requirements for life-saving applications.
 
